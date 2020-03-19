@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="FR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=" Easy'Bike : réservation de vélo en ligne sur Bordeaux" />
+    <meta property="og:url" content="brian-durand.com" />
+    <meta property="og:description"
+        content="Réservation de vélo sur la ville de Bordeaux. Carte/Map interactive actualisé en temps réel">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="PUBLIC/P3_02_CodeCss.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <title>Projet 3 OpenClassRooms Javascript </title>
+</head>
+
+<body>
+    <!------------------------------- CURSEUR -------------------------------->
+    <div id="playground">
+        <header>
+            <h1 class="title1">&nbsp; &nbsp; EASY'BIKE <span id="title2">&nbsp; Marseille</span></h1>
+        </header>
+        <!-- ----------------------------- DIAPORAMA ------------------------------ -->
+        <section class="containerDiaporama">
+            <img id="img0" src="./PUBLIC/IMG/img0.png" alt="vélo jaune" />
+            <div class="containerBoutonDiapo">
+                <button id="previous" type="button"></button>
+                <button id="pause" type="button"></button>
+                <button id="play" type="button"></button>
+                <button id="next" type="button"></button>
+            </div>
+        </section>
+        <!------------------------------- TITRE NIVEAU 2 -------------------------------->
+
+        <h2 class="title3"> Réserve dès à présent ton vélo !</h2>
+
+        <!------------------------------- MAP -------------------------------->
+        <section class="location">
+            <div id="mapid"></div>
+
+            <!------------------------------- FORMULAIRE DE RESERVATION -------------------------------->
+            <form id="formulaire1">
+                <!-- Formulaire de réservation -->
+                <label id="villeStation">LES STATIONS DE :<br><span id="formVilleStation"></span></label>
+                <br>
+                <label id="nomStation">Station selectionné :<br><span id="formStation"></span></label>
+                <label id="adresseStation">Adresse de la station :<br> <span id="formAdresse"><br></span></label>
+                <label id="statutStation"> Statut de la station :&nbsp;<span id="formStatut"> </span></label>
+                <label id="veloDispo"> Vélo disponible :&nbsp;<span id="formVeloDispo"></span></label>
+                <br>
+                <h4 id="commentaire">Réservé votre vélo en toute simplicité !</h4>
+                <label id="noms" for="nom">Nom</label>
+                <input id="nom" type="text" placeholder="Saisissez votre Nom" required>
+                <br>
+                <label id="prenoms" for="prenom">Prénom</label>
+                <input id="prenom" type="text" placeholder="Saisissez votre Prénom" required>
+                <br>
+                <button type="button" id="buttonJeReserve" name="JE RÉSERVE">Je réserve !</button>
+            </form>
+        </section>
+
+        <!-- ----------------------------- CANVAS -------------------------------->
+        <div id="containerCanvas">
+            <p id="instructionSigne">Veuillez signez avec la souris<br>Afin de finalisé vôtre réservation.</p>
+
+            <canvas id="canvas" width="300" height="220"></canvas> <!-- Canvas -->
+
+            <div id="containBut">
+                <button type="button" id="buttonReservation">JE VALIDE</button>
+                <button type="button" id="effacer">EFFACER</button>
+            </div>
+        </div>
+
+        <!------------------------------- BILLET DE RESERVATION -------------------------------->
+        <div class="timer" id="timer">
+
+            <p id="textTimerContainer">Votre réservation a bien été enregistrée !
+                <br>
+                <br>
+                Toutefois vous pouvez l'annuler dans le délai imparti.
+                <br><br>
+                <span id="min"></span>
+                min et
+                <span id="sec"></span>
+                s</p>
+            <p id="nomResa"></p>
+            <p id="adresseResa"></p>
+
+            <button id="annulation" type="submit">Annulation reservation</button>
+        </div>
+        <!------------------------------- FIN CURSEUR -------------------------------->
+    </div>
+
+    <!-- ----------------------------- PIED DE PAGE ------------------------------ -->
+    <footer>
+        <p id="copyright">CE PROJET A ÉTAIT RÉALISÉ DANS LE CADRE D’UNE FORMATION OPENCLASSROOMS P3 | site non officel |
+            Site propulsé par <a id="linkPerso" href="https://brian-durand.com" rel="Projet3 ">Brian Durand</a></p>
+    </footer>
+
+    <!-- ----------------------------- DÉCLARATION JAVASCRIPT -------------------------------->
+    <script src="JS/diaporama.js"></script>
+    <script src="JS/map.js"></script>
+    <script src="JS/formulaire.js"></script>
+    <script src="JS/canvas.js"></script>
+    <script src="JS/timer.js"></script>
+    <script src="JS/main.js"></script>
+
+</body>
+
+</html>
